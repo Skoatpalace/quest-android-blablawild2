@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "181398968517",
+    "firebase_url": "https://blablawild2-2900c.firebaseio.com",
+    "project_id": "blablawild2-2900c",
+    "storage_bucket": "blablawild2-2900c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181398968517:android:982eaadd93ce5971",
+        "android_client_info": {
+          "package_name": "fr.wildcodeschool.blablawild2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181398968517-iqmpml3uc0m1akn4p9j0rioapdo3n80h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVzY_zahx6EAL2dwzGEPRW4qqmliQnT4c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
