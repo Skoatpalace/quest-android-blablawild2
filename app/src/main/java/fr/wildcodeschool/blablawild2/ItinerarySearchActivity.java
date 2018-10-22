@@ -40,8 +40,8 @@ public class ItinerarySearchActivity extends AppCompatActivity {
                 if (departure.isEmpty() || destination.isEmpty() || date.isEmpty()) {
                     Toast.makeText(ItinerarySearchActivity.this, R.string.fill_all_fields, Toast.LENGTH_SHORT).show();
                 } else {
-                    Intent intent = new Intent(ItinerarySearchActivity.this, ItineraryListActivity.class);
-                    TripModel tripModel = new TripModel(departure, destination, date);
+                    final Intent intent = new Intent(ItinerarySearchActivity.this, ItineraryListActivity.class);
+                    final TripModel tripModel = new TripModel(departure, destination, date);
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference tripRef = database.getReference("trips");
                     String key = tripRef.push().getKey();
@@ -49,7 +49,7 @@ public class ItinerarySearchActivity extends AppCompatActivity {
                     tripRef.child(key).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            Intent intent = new Intent(ItinerarySearchActivity.this, MainActivity.class);
+                            intent.putExtra(EXTRA_TRIP, tripModel);
                             startActivity(intent);
                         }
 
@@ -59,11 +59,6 @@ public class ItinerarySearchActivity extends AppCompatActivity {
                             Toast.makeText(ItinerarySearchActivity.this, "Failed to read value.", Toast.LENGTH_LONG).show();
                         }
                     });
-// sauvegarde la valeur
-                    tripRef.child(key).setValue(tripModel);
-
-                    intent.putExtra(EXTRA_TRIP, tripModel);
-                    startActivity(intent);
                 }
             }
         });

@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 // récupère la donnée contenue et la convertie en ItineraryModel
                 ItineraryModel itinerary = dataSnapshot.getValue(ItineraryModel.class);
                 // affiche le conducteur de l'itineraire
-                Toast.makeText(MainActivity.this, itinerary.getDriver(), Toast.LENGTH_LONG).show();
+
             }
 
             @Override
